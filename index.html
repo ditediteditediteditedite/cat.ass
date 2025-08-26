@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>cat</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #430bb4; /* Purple night */
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .bubble {
+      animation: float 6s ease-in-out infinite;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d6c9ff;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #eeeeee;
+      margin: 10px 0 20px;
+    }
+
+    .cat-img {
+      width: 700px;
+      transition: transform 0.4s ease;
+      border-radius: 20px;
+    }
+
+    .cat-img:hover {
+      transform: scaleX(1.2) scaleY(0.8);
+    }
+
+    .cat-img:active {
+      transform: scaleX(0.8) scaleY(1.2);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #fff;
+      animation: twinkle 1.5s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+  </style>
+</head>
+<body>
+  <div class="bubble">
+    <h1>cat</h1>
+    <p>mcat with fat ass</p>
+    <img src="cat.jpg" class="cat-img" alt="cat" />
+  </div>
+
+  <script>
+    for (let i = 0; i < 50; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.style.top = `${Math.random() * 100}vh`;
+      sparkle.style.left = `${Math.random() * 100}vw`;
+      sparkle.style.animationDelay = `${Math.random() * 2}s`;
+      document.body.appendChild(sparkle);
+    }
+  </script>
+</body>
+</html>
